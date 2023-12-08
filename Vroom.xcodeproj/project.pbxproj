@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A53920C92B22B48200DF77F7 /* VroomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53920C82B22B48200DF77F7 /* VroomApp.swift */; };
+		A53920CB2B22B48200DF77F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53920CA2B22B48200DF77F7 /* ContentView.swift */; };
+		A53920CD2B22B48300DF77F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53920CC2B22B48300DF77F7 /* Assets.xcassets */; };
+		A53920D02B22B48300DF77F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53920CF2B22B48300DF77F7 /* Preview Assets.xcassets */; };
+		A53920DA2B22B48300DF77F7 /* VroomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53920D92B22B48300DF77F7 /* VroomTests.swift */; };
+		A53920E42B22B48300DF77F7 /* VroomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53920E32B22B48300DF77F7 /* VroomUITests.swift */; };
+		A53920E62B22B48300DF77F7 /* VroomUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53920E52B22B48300DF77F7 /* VroomUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A53920D62B22B48300DF77F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A53920BD2B22B48200DF77F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A53920C42B22B48200DF77F7;
+			remoteInfo = Vroom;
+		};
+		A53920E02B22B48300DF77F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A53920BD2B22B48200DF77F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A53920C42B22B48200DF77F7;
+			remoteInfo = Vroom;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A53920C52B22B48200DF77F7 /* Vroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A53920C82B22B48200DF77F7 /* VroomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VroomApp.swift; sourceTree = "<group>"; };
+		A53920CA2B22B48200DF77F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A53920CC2B22B48300DF77F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A53920CF2B22B48300DF77F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A53920D52B22B48300DF77F7 /* VroomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VroomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A53920D92B22B48300DF77F7 /* VroomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VroomTests.swift; sourceTree = "<group>"; };
+		A53920DF2B22B48300DF77F7 /* VroomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VroomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A53920E32B22B48300DF77F7 /* VroomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VroomUITests.swift; sourceTree = "<group>"; };
+		A53920E52B22B48300DF77F7 /* VroomUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VroomUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A53920C22B22B48200DF77F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53920D22B22B48300DF77F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53920DC2B22B48300DF77F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A53920BC2B22B48100DF77F7 = {
+			isa = PBXGroup;
+			children = (
+				A53920C72B22B48200DF77F7 /* Vroom */,
+				A53920D82B22B48300DF77F7 /* VroomTests */,
+				A53920E22B22B48300DF77F7 /* VroomUITests */,
+				A53920C62B22B48200DF77F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A53920C62B22B48200DF77F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A53920C52B22B48200DF77F7 /* Vroom.app */,
+				A53920D52B22B48300DF77F7 /* VroomTests.xctest */,
+				A53920DF2B22B48300DF77F7 /* VroomUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A53920C72B22B48200DF77F7 /* Vroom */ = {
+			isa = PBXGroup;
+			children = (
+				A53920C82B22B48200DF77F7 /* VroomApp.swift */,
+				A53920CA2B22B48200DF77F7 /* ContentView.swift */,
+				A53920CC2B22B48300DF77F7 /* Assets.xcassets */,
+				A53920CE2B22B48300DF77F7 /* Preview Content */,
+			);
+			path = Vroom;
+			sourceTree = "<group>";
+		};
+		A53920CE2B22B48300DF77F7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A53920CF2B22B48300DF77F7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A53920D82B22B48300DF77F7 /* VroomTests */ = {
+			isa = PBXGroup;
+			children = (
+				A53920D92B22B48300DF77F7 /* VroomTests.swift */,
+			);
+			path = VroomTests;
+			sourceTree = "<group>";
+		};
+		A53920E22B22B48300DF77F7 /* VroomUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A53920E32B22B48300DF77F7 /* VroomUITests.swift */,
+				A53920E52B22B48300DF77F7 /* VroomUITestsLaunchTests.swift */,
+			);
+			path = VroomUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A53920C42B22B48200DF77F7 /* Vroom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A53920E92B22B48300DF77F7 /* Build configuration list for PBXNativeTarget "Vroom" */;
+			buildPhases = (
+				A53920C12B22B48200DF77F7 /* Sources */,
+				A53920C22B22B48200DF77F7 /* Frameworks */,
+				A53920C32B22B48200DF77F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vroom;
+			productName = Vroom;
+			productReference = A53920C52B22B48200DF77F7 /* Vroom.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A53920D42B22B48300DF77F7 /* VroomTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A53920EC2B22B48300DF77F7 /* Build configuration list for PBXNativeTarget "VroomTests" */;
+			buildPhases = (
+				A53920D12B22B48300DF77F7 /* Sources */,
+				A53920D22B22B48300DF77F7 /* Frameworks */,
+				A53920D32B22B48300DF77F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A53920D72B22B48300DF77F7 /* PBXTargetDependency */,
+			);
+			name = VroomTests;
+			productName = VroomTests;
+			productReference = A53920D52B22B48300DF77F7 /* VroomTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A53920DE2B22B48300DF77F7 /* VroomUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A53920EF2B22B48300DF77F7 /* Build configuration list for PBXNativeTarget "VroomUITests" */;
+			buildPhases = (
+				A53920DB2B22B48300DF77F7 /* Sources */,
+				A53920DC2B22B48300DF77F7 /* Frameworks */,
+				A53920DD2B22B48300DF77F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A53920E12B22B48300DF77F7 /* PBXTargetDependency */,
+			);
+			name = VroomUITests;
+			productName = VroomUITests;
+			productReference = A53920DF2B22B48300DF77F7 /* VroomUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A53920BD2B22B48200DF77F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A53920C42B22B48200DF77F7 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					A53920D42B22B48300DF77F7 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = A53920C42B22B48200DF77F7;
+					};
+					A53920DE2B22B48300DF77F7 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = A53920C42B22B48200DF77F7;
+					};
+				};
+			};
+			buildConfigurationList = A53920C02B22B48200DF77F7 /* Build configuration list for PBXProject "Vroom" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A53920BC2B22B48100DF77F7;
+			productRefGroup = A53920C62B22B48200DF77F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A53920C42B22B48200DF77F7 /* Vroom */,
+				A53920D42B22B48300DF77F7 /* VroomTests */,
+				A53920DE2B22B48300DF77F7 /* VroomUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A53920C32B22B48200DF77F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53920D02B22B48300DF77F7 /* Preview Assets.xcassets in Resources */,
+				A53920CD2B22B48300DF77F7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53920D32B22B48300DF77F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53920DD2B22B48300DF77F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A53920C12B22B48200DF77F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53920CB2B22B48200DF77F7 /* ContentView.swift in Sources */,
+				A53920C92B22B48200DF77F7 /* VroomApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53920D12B22B48300DF77F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53920DA2B22B48300DF77F7 /* VroomTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A53920DB2B22B48300DF77F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A53920E62B22B48300DF77F7 /* VroomUITestsLaunchTests.swift in Sources */,
+				A53920E42B22B48300DF77F7 /* VroomUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A53920D72B22B48300DF77F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A53920C42B22B48200DF77F7 /* Vroom */;
+			targetProxy = A53920D62B22B48300DF77F7 /* PBXContainerItemProxy */;
+		};
+		A53920E12B22B48300DF77F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A53920C42B22B48200DF77F7 /* Vroom */;
+			targetProxy = A53920E02B22B48300DF77F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A53920E72B22B48300DF77F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A53920E82B22B48300DF77F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A53920EA2B22B48300DF77F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Vroom/Preview Content\"";
+				DEVELOPMENT_TEAM = FJYVQ59ZHV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.Vroom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A53920EB2B22B48300DF77F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Vroom/Preview Content\"";
+				DEVELOPMENT_TEAM = FJYVQ59ZHV;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.Vroom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A53920ED2B22B48300DF77F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FJYVQ59ZHV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.VroomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vroom.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vroom";
+			};
+			name = Debug;
+		};
+		A53920EE2B22B48300DF77F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FJYVQ59ZHV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.VroomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vroom.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Vroom";
+			};
+			name = Release;
+		};
+		A53920F02B22B48300DF77F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FJYVQ59ZHV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.VroomUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vroom;
+			};
+			name = Debug;
+		};
+		A53920F12B22B48300DF77F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FJYVQ59ZHV;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tutorial.VroomUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Vroom;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A53920C02B22B48200DF77F7 /* Build configuration list for PBXProject "Vroom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A53920E72B22B48300DF77F7 /* Debug */,
+				A53920E82B22B48300DF77F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A53920E92B22B48300DF77F7 /* Build configuration list for PBXNativeTarget "Vroom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A53920EA2B22B48300DF77F7 /* Debug */,
+				A53920EB2B22B48300DF77F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A53920EC2B22B48300DF77F7 /* Build configuration list for PBXNativeTarget "VroomTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A53920ED2B22B48300DF77F7 /* Debug */,
+				A53920EE2B22B48300DF77F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A53920EF2B22B48300DF77F7 /* Build configuration list for PBXNativeTarget "VroomUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A53920F02B22B48300DF77F7 /* Debug */,
+				A53920F12B22B48300DF77F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A53920BD2B22B48200DF77F7 /* Project object */;
+}
