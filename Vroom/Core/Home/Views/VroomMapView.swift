@@ -2,7 +2,7 @@
 //  VroomMapView.swift
 //  Vroom
 //
-//  Created by Victor Nguyen on 12/7/23.
+//  Created by Victor Nguyen on 11/27/23.
 //
 
 import Foundation
@@ -12,6 +12,7 @@ struct VroomMapView: UIViewRepresentable {
     
     let mapView = MKMapView()
     let locationManager = LocationManager()
+    @EnvironmentObject var locationViewModel : SearchViewModel
     
     // make the mapView we see in app
     func makeUIView(context: Context) -> some UIView {
@@ -22,7 +23,9 @@ struct VroomMapView: UIViewRepresentable {
         return mapView
     }
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        
+        if let selectedLocation = locationViewModel.selectedLocation {
+            print("DEBUG: Selected location in map view \(selectedLocation)")
+        }
     }
     
     func makeCoordinator() -> MapCoordinator {
