@@ -21,6 +21,7 @@
 		A53921092B23CC2B00DF77F7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53921082B23CC2B00DF77F7 /* SearchView.swift */; };
 		A539210B2B23D0EA00DF77F7 /* SearchResultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A539210A2B23D0E900DF77F7 /* SearchResultCells.swift */; };
 		A539210D2B24B6AA00DF77F7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A539210C2B24B6AA00DF77F7 /* SearchViewModel.swift */; };
+		A5CF15202B25630C0084C129 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF151F2B25630C0084C129 /* MapViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		A53921082B23CC2B00DF77F7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A539210A2B23D0E900DF77F7 /* SearchResultCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCells.swift; sourceTree = "<group>"; };
 		A539210C2B24B6AA00DF77F7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		A5CF151F2B25630C0084C129 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		A53920F22B22B53D00DF77F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A5CF151F2B25630C0084C129 /* MapViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				A53920FF2B22B93300DF77F7 /* LocationManager.swift in Sources */,
 				A53920C92B22B48200DF77F7 /* VroomApp.swift in Sources */,
 				A539210B2B23D0EA00DF77F7 /* SearchResultCells.swift in Sources */,
+				A5CF15202B25630C0084C129 /* MapViewState.swift in Sources */,
 				A53920FD2B22B6E100DF77F7 /* VroomMapView.swift in Sources */,
 				A53921092B23CC2B00DF77F7 /* SearchView.swift in Sources */,
 				A53921072B23C74000DF77F7 /* MapViewAction.swift in Sources */,
