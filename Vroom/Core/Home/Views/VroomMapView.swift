@@ -30,14 +30,14 @@ struct VroomMapView: UIViewRepresentable {
         case .noInput:
             context.coordinator.clearMapViewReset()
             break
+        case .searchingForLocation:
+            break
         case .locationSelected:
             if let coordinate = locationViewModel.selectedLocationCoordinate {
     //            print("DEBUG: Selected coordinates in map view \(coordinate)")
                 context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
                 context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
             }
-            break
-        case .searchingForLocation:
             break
         }
     }
@@ -83,6 +83,8 @@ extension VroomMapView {
         
         func configurePolyline(withDestinationCoordinate coordinate: CLLocationCoordinate2D) {
             guard let userLocationCoordinate = self.userLocationCoordinate else {return}
+            self.parent.mapView.removeOverlays(self.parent.mapView.overlays)
+            print("DEBUG: Previous overlay should be removed")
             getDestinationRoute(from: userLocationCoordinate, to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
             }
