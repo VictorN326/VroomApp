@@ -22,6 +22,11 @@
 		A539210B2B23D0EA00DF77F7 /* SearchResultCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = A539210A2B23D0E900DF77F7 /* SearchResultCells.swift */; };
 		A539210D2B24B6AA00DF77F7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A539210C2B24B6AA00DF77F7 /* SearchViewModel.swift */; };
 		A5CF15202B25630C0084C129 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF151F2B25630C0084C129 /* MapViewState.swift */; };
+		A5CF15232B25CA370084C129 /* RideRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF15222B25CA370084C129 /* RideRequest.swift */; };
+		A5CF15252B2758690084C129 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF15242B2758690084C129 /* RideType.swift */; };
+		A5CF15272B278F610084C129 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF15262B278F610084C129 /* CurrencyConverter.swift */; };
+		A5CF15292B2797270084C129 /* VroomLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF15282B2797270084C129 /* VroomLocation.swift */; };
+		A5CF152B2B279ED10084C129 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF152A2B279ED10084C129 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,11 @@
 		A539210A2B23D0E900DF77F7 /* SearchResultCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCells.swift; sourceTree = "<group>"; };
 		A539210C2B24B6AA00DF77F7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		A5CF151F2B25630C0084C129 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
+		A5CF15222B25CA370084C129 /* RideRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequest.swift; sourceTree = "<group>"; };
+		A5CF15242B2758690084C129 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
+		A5CF15262B278F610084C129 /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
+		A5CF15282B2797270084C129 /* VroomLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VroomLocation.swift; sourceTree = "<group>"; };
+		A5CF152A2B279ED10084C129 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				A5CF151F2B25630C0084C129 /* MapViewState.swift */,
+				A5CF15242B2758690084C129 /* RideType.swift */,
+				A5CF15282B2797270084C129 /* VroomLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +177,8 @@
 		A53920F42B22B54A00DF77F7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A5CF15262B278F610084C129 /* CurrencyConverter.swift */,
+				A5CF152A2B279ED10084C129 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 		A53920F52B22B54F00DF77F7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A5CF15212B25CA1F0084C129 /* Trips */,
 				A53921012B23ABA300DF77F7 /* LocationSearch */,
 				A53921002B23AB7600DF77F7 /* Home */,
 			);
@@ -237,6 +252,14 @@
 				A539210C2B24B6AA00DF77F7 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A5CF15212B25CA1F0084C129 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				A5CF15222B25CA370084C129 /* RideRequest.swift */,
+			);
+			path = Trips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,15 +393,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				A53920FF2B22B93300DF77F7 /* LocationManager.swift in Sources */,
+				A5CF15272B278F610084C129 /* CurrencyConverter.swift in Sources */,
 				A53920C92B22B48200DF77F7 /* VroomApp.swift in Sources */,
 				A539210B2B23D0EA00DF77F7 /* SearchResultCells.swift in Sources */,
+				A5CF15232B25CA370084C129 /* RideRequest.swift in Sources */,
 				A5CF15202B25630C0084C129 /* MapViewState.swift in Sources */,
 				A53920FD2B22B6E100DF77F7 /* VroomMapView.swift in Sources */,
 				A53921092B23CC2B00DF77F7 /* SearchView.swift in Sources */,
+				A5CF152B2B279ED10084C129 /* Color.swift in Sources */,
 				A53921072B23C74000DF77F7 /* MapViewAction.swift in Sources */,
 				A539210D2B24B6AA00DF77F7 /* SearchViewModel.swift in Sources */,
 				A53921052B23B45F00DF77F7 /* SearchActivateView.swift in Sources */,
 				A53920FA2B22B61800DF77F7 /* HomeView.swift in Sources */,
+				A5CF15292B2797270084C129 /* VroomLocation.swift in Sources */,
+				A5CF15252B2758690084C129 /* RideType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

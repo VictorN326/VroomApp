@@ -11,7 +11,7 @@ import MapKit
 struct VroomMapView: UIViewRepresentable {
     
     let mapView = MKMapView()
-    let locationManager = LocationManager()
+    let locationManager = LocationManager.shared
     @Binding var mapState: MapViewState
     @EnvironmentObject var locationViewModel : SearchViewModel
     
@@ -24,7 +24,7 @@ struct VroomMapView: UIViewRepresentable {
         return mapView
     }
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        print("DEBUG: Map state is \(mapState)")
+//        print("DEBUG: Map state is \(mapState)")
         
         switch mapState {
         case .noInput:
@@ -33,11 +33,14 @@ struct VroomMapView: UIViewRepresentable {
         case .searchingForLocation:
             break
         case .locationSelected:
-            if let coordinate = locationViewModel.selectedLocationCoordinate {
-    //            print("DEBUG: Selected coordinates in map view \(coordinate)")
+            if let coordinate = locationViewModel.selectedVroomLocation?.coordinate {
+//                print("DEBUG: Coordinate is \(coordinate)")
+//                print("DEBUG: Adding stuff to the map...")
                 context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
                 context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
             }
+            break
+        case .polylineAdded:
             break
         }
     }
@@ -77,36 +80,21 @@ extension VroomMapView {
             anno.coordinate = coordinate
             parent.mapView.addAnnotation(anno)
             parent.mapView.selectAnnotation(anno, animated: true)
-            
-            parent.mapView.showAnnotations(parent.mapView.annotations, animated: true)
         }
         
         func configurePolyline(withDestinationCoordinate coordinate: CLLocationCoordinate2D) {
             guard let userLocationCoordinate = self.userLocationCoordinate else {return}
-            self.parent.mapView.removeOverlays(self.parent.mapView.overlays)
-            print("DEBUG: Previous overlay should be removed")
-            getDestinationRoute(from: userLocationCoordinate, to: coordinate) { route in
+//            self.parent.mapView.removeOverlays(self.parent.mapView.overlays)
+//            print("DEBUG: Previous overlay should be removed")
+            parent.locationViewModel.getDestinationRoute(from: userLocationCoordinate, to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
+                self.parent.mapState = .polylineAdded
+                let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32))
+                self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
             }
         }
         
-        func getDestinationRoute(from userLocation: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, completion: @escaping(MKRoute) -> Void) {
-            let userPlacemark = MKPlacemark(coordinate: userLocation)
-            let destinationPlaceMark = MKPlacemark(coordinate: destination)
-            let request = MKDirections.Request()
-            request.source = MKMapItem(placemark: userPlacemark)
-            request.destination = MKMapItem(placemark: destinationPlaceMark)
-            let directions = MKDirections(request: request)
-            directions.calculate { response, error in
-                if let error = error {
-                    print("DEBUG: Failed to get direction with error \(error.localizedDescription)")
-                    return
-                }
-                guard let route = response?.routes.first else {return}
-                completion(route)
-            }
-            
-        }
+
         // remove location annotations and polylines to reset back to original state
         func clearMapViewReset() {
             parent.mapView.removeAnnotations(parent.mapView.annotations)

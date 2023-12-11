@@ -17,11 +17,11 @@ struct SearchView: View {
             // Our Location Header View (current location and final destination)
             HStack {
                 VStack {
-                    Circle().fill(Color(.systemGray3))
+                    Circle().fill(Color.theme.primaryTextColor)
                         .frame(width: 6, height: 6)
-                    Rectangle().fill(Color(.systemGray3))
+                    Rectangle().fill(Color.theme.primaryTextColor)
                         .frame(width: 1, height: 24)
-                    Rectangle().fill(.black)
+                    Rectangle().fill(Color.theme.primaryTextColor)
                         .frame(width: 6, height: 6)
                 }
                 VStack {
@@ -44,13 +44,16 @@ struct SearchView: View {
                     ForEach(viewModel.results, id: \.self)
                     {result in SearchResultCells(title: result.title, subtitle: result.subtitle)
                             .onTapGesture {
-                                viewModel.selectLocation(result)
-                                mapState = .locationSelected
+                                withAnimation(.spring()) {
+                                    viewModel.selectLocation(result)
+                                    mapState = .locationSelected
+                                }
                             }
                     }
                 }
             }
         }
+        .background(Color.theme.backgroundColor)
         .background(.white)
     }
 }

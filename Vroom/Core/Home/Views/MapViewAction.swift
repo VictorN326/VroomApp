@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MapViewAction: View {
     @Binding var mapState: MapViewState
+    @EnvironmentObject var viewModel: SearchViewModel
+    
     var body: some View {
         Button{
             withAnimation(.spring()){
@@ -35,9 +37,10 @@ struct MapViewAction: View {
         case .searchingForLocation:
             mapState = .noInput
             
-        case .locationSelected:
+        case .locationSelected, .polylineAdded:
 //            print("DEBUG: Clear map view...")
             mapState = .noInput
+            viewModel.selectedVroomLocation = nil
         }
     }
     
@@ -46,8 +49,11 @@ struct MapViewAction: View {
         case .noInput:
             return "line.3.horizontal"
             
-        case .searchingForLocation, .locationSelected:
+        case .searchingForLocation, .locationSelected, .polylineAdded:
             return "arrow.left"
+        default:
+            return "line.3.horizontal"
+        
         }
     }
 }
