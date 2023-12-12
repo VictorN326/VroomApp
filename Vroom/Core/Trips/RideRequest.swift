@@ -19,11 +19,11 @@ struct RideRequest: View {
         // Our Trip Info View
             HStack {
                 VStack {
-                    Circle().fill(Color(.systemGray3))
+                    Circle().fill(Color.theme.primaryTextColor)
                         .frame(width: 8, height: 8)
-                    Rectangle().fill(Color(.systemGray3))
+                    Rectangle().fill(Color.theme.primaryTextColor)
                         .frame(width: 1, height: 32)
-                    Rectangle().fill(.black)
+                    Rectangle().fill(Color.theme.primaryTextColor)
                         .frame(width: 8, height: 8)
                 }
                 VStack(alignment: .leading, spacing: 24) {

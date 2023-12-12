@@ -10,6 +10,7 @@ import SwiftUI
 struct MapViewAction: View {
     @Binding var mapState: MapViewState
     @EnvironmentObject var viewModel: SearchViewModel
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
     
     var body: some View {
         Button{
@@ -32,7 +33,7 @@ struct MapViewAction: View {
     func actionForState(_ state: MapViewState) {
         switch state {
         case .noInput:
-            print("DEBUG: No input")
+            authViewModel.signOut()
             
         case .searchingForLocation:
             mapState = .noInput
