@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MapViewAction: View {
     @Binding var mapState: MapViewState
+    @Binding var showSideMenu: Bool
     @EnvironmentObject var viewModel: SearchViewModel
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     
@@ -33,8 +34,7 @@ struct MapViewAction: View {
     func actionForState(_ state: MapViewState) {
         switch state {
         case .noInput:
-            authViewModel.signOut()
-            
+            showSideMenu.toggle()
         case .searchingForLocation:
             mapState = .noInput
             
@@ -60,5 +60,5 @@ struct MapViewAction: View {
 }
 
 #Preview {
-    MapViewAction(mapState: .constant(.noInput))
+    MapViewAction(mapState: .constant(.noInput), showSideMenu: .constant(false))
 }

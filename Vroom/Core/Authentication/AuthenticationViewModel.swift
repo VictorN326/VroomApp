@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestoreSwift
 class AuthenticationViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
-    
+    @Published var currentUser: User?
     init() {
         userSession = Auth.auth().currentUser
         fetchUser()
@@ -54,6 +54,7 @@ class AuthenticationViewModel: ObservableObject {
         }
     }
     
+    // Get user information from Firebase
     func fetchUser() {
         guard let uid = self.userSession?.uid else {return}
         Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
@@ -65,8 +66,9 @@ class AuthenticationViewModel: ObservableObject {
 //            print("DEBUG: User data is \(data)")
             guard let user = try? snapshot.data(as: User.self) else {return}
             
-            print("DEBUG: User is \(user.fullName)")
-            print("DEBUG: Email is \(user.email)")
+            self.currentUser = user
+//            print("DEBUG: User is \(user.fullName)")
+//            print("DEBUG: Email is \(user.email)")
         }
     }
     
