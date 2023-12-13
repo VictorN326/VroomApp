@@ -7,7 +7,11 @@
 
 import Foundation
 import MapKit
-
+import Firebase
+enum LocationResultsViewConfiguration {
+    case ride
+    case saveLocation(SavedLocationViewModel)
+}
 class SearchViewModel: NSObject, ObservableObject {
     // Published means when it gets published, it sends notification to views listening for changes on it
     @Published var results = [MKLocalSearchCompletion]()
@@ -32,16 +36,27 @@ class SearchViewModel: NSObject, ObservableObject {
         searchCompleter.queryFragment = queryFragment
     }
     
-    func selectLocation(_ location: MKLocalSearchCompletion) {
-        locationSearch(forLocalSearchCompletion: location) {response, error in
+    func selectLocation(_ location: MKLocalSearchCompletion, config: LocationResultsViewConfiguration) {
+        locationSearch(forLocalSearchCompletion: location) { response, error in
             if let error = error {
                 print("DEBUG: Location search failed with error \(error.localizedDescription)")
                 return
             }
             guard let item = response?.mapItems.first else {return}
             let coordinate = item.placemark.coordinate
-            self.selectedVroomLocation = VroomLocation(title: location.title, coordinate: coordinate)
-//            print("DEBUG: Location coordinates \(coordinate)")
+            switch config {
+            case.ride:
+                self.selectedVroomLocation = VroomLocation(title: location.title, coordinate: coordinate)
+            case .saveLocation(let viewModel):
+                guard let uid = Auth.auth().currentUser?.uid else {return}
+                let savedLocation = SavedLocation(title: location.title, address: location.subtitle, coordinates: GeoPoint(latitude: coordinate.latitude, longitude: coordinate.longitude))
+                print("DEBUG: Saved Location INFO\(savedLocation)")
+                guard let encodedLocation = try? Firestore.Encoder().encode(savedLocation) else {return}
+                Firestore.firestore().collection("users").document(uid).updateData([
+                    viewModel.databaseKey: encodedLocation
+                ])
+//                print("DEBUG: Saved Location coordinates are \(coordinate)")
+            }
         }
     }
     

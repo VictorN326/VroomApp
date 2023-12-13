@@ -28,6 +28,7 @@ struct HomeView: View {
                     }
                     .onAppear(perform: {
                         showSideMenu = false
+                        authViewModel.refreshUser()
                     })
                 }
 
@@ -43,7 +44,7 @@ extension HomeView {
                 VroomMapView(mapState: $mapState).ignoresSafeArea()
                 
                 if mapState == .searchingForLocation {
-                    SearchView(mapState: $mapState)
+                    SearchView()
                 } else if mapState == .noInput{
                     SearchActivateView().padding(.top, 72)
                         .onTapGesture {
@@ -69,6 +70,11 @@ extension HomeView {
                 locationViewModel.userLocation = location
             }
         })
+            .onReceive(locationViewModel.$selectedVroomLocation, perform: {location in
+                if location != nil {
+                    self.mapState = .locationSelected
+                }
+            })
     }
 }
 #Preview {

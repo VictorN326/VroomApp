@@ -22,7 +22,10 @@ class AuthenticationViewModel: ObservableObject {
             }
 //            print("DEBUG: Signed user in successfully")
 //            print("DEBUG: User id \(result?.user.uid)")
-            self.userSession = result?.user
+            DispatchQueue.main.async {
+                self.userSession = result?.user
+                self.fetchUser() 
+            }
         }
     }
     
@@ -35,12 +38,15 @@ class AuthenticationViewModel: ObservableObject {
 //            print("DEBUG: Registered user successfully")
 //            print("DEBUG User id \(result?.user.uid)")
             guard let firebaseUser = result?.user else {return}
-            self.userSession = firebaseUser
-            
-            let user = User(fullName: fullName, email: email, uid: firebaseUser.uid)
-            guard let encodedUser = try? Firestore.Encoder().encode(user) else {return}
-            
-            Firestore.firestore().collection("users").document(firebaseUser.uid).setData(encodedUser)
+            DispatchQueue.main.async {
+                self.userSession = firebaseUser
+                let user = User(fullName: fullName, email: email, uid: firebaseUser.uid, coordinates: GeoPoint(latitude: 37.38, longitude: -122.05), accountType: .driver)
+                self.currentUser = user
+                guard let encodedUser = try? Firestore.Encoder().encode(user) else {return}
+                
+                Firestore.firestore().collection("users").document(firebaseUser.uid).setData(encodedUser)
+            }
+
         }
     }
     
@@ -48,6 +54,10 @@ class AuthenticationViewModel: ObservableObject {
         do {
             try Auth.auth().signOut()
             self.userSession = nil
+            DispatchQueue.main.async {
+                self.userSession = nil
+                self.currentUser = nil // Clear the currentUser as well
+            }
 //            print("DEBUG: Did sign out with firebase")
         } catch let error {
             print("DEBUGL Failed to sign out with error: \(error.localizedDescription)")
@@ -67,9 +77,14 @@ class AuthenticationViewModel: ObservableObject {
             guard let user = try? snapshot.data(as: User.self) else {return}
             
             self.currentUser = user
+//            print("DEBUG: Current user is \(user)")
 //            print("DEBUG: User is \(user.fullName)")
 //            print("DEBUG: Email is \(user.email)")
         }
+    }
+    
+    func refreshUser() {
+        fetchUser()
     }
     
 }

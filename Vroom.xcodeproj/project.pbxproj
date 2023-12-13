@@ -10,6 +10,14 @@
 		A5162E2C2B28FC4900EB92E1 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E2B2B28FC4900EB92E1 /* SideMenuView.swift */; };
 		A5162E2E2B2900D400EB92E1 /* SideMenuOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E2D2B2900D400EB92E1 /* SideMenuOptionModel.swift */; };
 		A5162E322B2901E200EB92E1 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E312B2901E200EB92E1 /* SideMenuOptionView.swift */; };
+		A5162E352B29352C00EB92E1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E342B29352C00EB92E1 /* SettingsView.swift */; };
+		A5162E392B2937B000EB92E1 /* SavedLocationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E382B2937B000EB92E1 /* SavedLocationRowView.swift */; };
+		A5162E3B2B2938D500EB92E1 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E3A2B2938D500EB92E1 /* SettingsRowView.swift */; };
+		A5162E3D2B29410900EB92E1 /* SavedLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E3C2B29410900EB92E1 /* SavedLocationViewModel.swift */; };
+		A5162E3F2B2955B000EB92E1 /* SavedLocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E3E2B2955B000EB92E1 /* SavedLocationSearchView.swift */; };
+		A5162E412B295C6900EB92E1 /* LocationSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E402B295C6900EB92E1 /* LocationSearchResultsView.swift */; };
+		A5162E432B29683500EB92E1 /* SavedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E422B29683500EB92E1 /* SavedLocation.swift */; };
+		A5162E452B29A28500EB92E1 /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E442B29A28500EB92E1 /* DeveloperPreview.swift */; };
 		A53920C92B22B48200DF77F7 /* VroomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53920C82B22B48200DF77F7 /* VroomApp.swift */; };
 		A53920CD2B22B48300DF77F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53920CC2B22B48300DF77F7 /* Assets.xcassets */; };
 		A53920D02B22B48300DF77F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53920CF2B22B48300DF77F7 /* Preview Assets.xcassets */; };
@@ -63,6 +71,14 @@
 		A5162E2B2B28FC4900EB92E1 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		A5162E2D2B2900D400EB92E1 /* SideMenuOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionModel.swift; sourceTree = "<group>"; };
 		A5162E312B2901E200EB92E1 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
+		A5162E342B29352C00EB92E1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A5162E382B2937B000EB92E1 /* SavedLocationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationRowView.swift; sourceTree = "<group>"; };
+		A5162E3A2B2938D500EB92E1 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		A5162E3C2B29410900EB92E1 /* SavedLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationViewModel.swift; sourceTree = "<group>"; };
+		A5162E3E2B2955B000EB92E1 /* SavedLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationSearchView.swift; sourceTree = "<group>"; };
+		A5162E402B295C6900EB92E1 /* LocationSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsView.swift; sourceTree = "<group>"; };
+		A5162E422B29683500EB92E1 /* SavedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocation.swift; sourceTree = "<group>"; };
+		A5162E442B29A28500EB92E1 /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
 		A53920C52B22B48200DF77F7 /* Vroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53920C82B22B48200DF77F7 /* VroomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VroomApp.swift; sourceTree = "<group>"; };
 		A53920CC2B22B48300DF77F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +165,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A5162E332B29351600EB92E1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A5162E372B29355E00EB92E1 /* ViewModel */,
+				A5162E362B29355500EB92E1 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A5162E362B29355500EB92E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5162E342B29352C00EB92E1 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5162E372B29355E00EB92E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A5162E3C2B29410900EB92E1 /* SavedLocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A53920BC2B22B48100DF77F7 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +258,7 @@
 				A5CF15242B2758690084C129 /* RideType.swift */,
 				A5CF15282B2797270084C129 /* VroomLocation.swift */,
 				A5CF15482B284A160084C129 /* User.swift */,
+				A5162E422B29683500EB92E1 /* SavedLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +276,7 @@
 			children = (
 				A5CF15262B278F610084C129 /* CurrencyConverter.swift */,
 				A5CF152A2B279ED10084C129 /* Color.swift */,
+				A5162E442B29A28500EB92E1 /* DeveloperPreview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +284,7 @@
 		A53920F52B22B54F00DF77F7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A5162E332B29351600EB92E1 /* Settings */,
 				A5162E282B28FC1500EB92E1 /* SideMenu */,
 				A5CF152C2B27D8FD0084C129 /* Authentication */,
 				A5CF15212B25CA1F0084C129 /* Trips */,
@@ -299,6 +343,7 @@
 				A53921042B23B45F00DF77F7 /* SearchActivateView.swift */,
 				A53921082B23CC2B00DF77F7 /* SearchView.swift */,
 				A539210A2B23D0E900DF77F7 /* SearchResultCells.swift */,
+				A5162E3E2B2955B000EB92E1 /* SavedLocationSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,6 +394,9 @@
 			isa = PBXGroup;
 			children = (
 				A5CF15352B2817100084C129 /* CustomInputField.swift */,
+				A5162E382B2937B000EB92E1 /* SavedLocationRowView.swift */,
+				A5162E3A2B2938D500EB92E1 /* SettingsRowView.swift */,
+				A5162E402B295C6900EB92E1 /* LocationSearchResultsView.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -494,15 +542,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A53920FF2B22B93300DF77F7 /* LocationManager.swift in Sources */,
+				A5162E3F2B2955B000EB92E1 /* SavedLocationSearchView.swift in Sources */,
+				A5162E392B2937B000EB92E1 /* SavedLocationRowView.swift in Sources */,
 				A5CF15272B278F610084C129 /* CurrencyConverter.swift in Sources */,
 				A5CF15472B282D3F0084C129 /* AuthenticationViewModel.swift in Sources */,
 				A53920C92B22B48200DF77F7 /* VroomApp.swift in Sources */,
 				A539210B2B23D0EA00DF77F7 /* SearchResultCells.swift in Sources */,
+				A5162E452B29A28500EB92E1 /* DeveloperPreview.swift in Sources */,
 				A5CF15232B25CA370084C129 /* RideRequest.swift in Sources */,
 				A5CF15332B27D9620084C129 /* RegistrationView.swift in Sources */,
 				A5CF15202B25630C0084C129 /* MapViewState.swift in Sources */,
+				A5162E412B295C6900EB92E1 /* LocationSearchResultsView.swift in Sources */,
+				A5162E3D2B29410900EB92E1 /* SavedLocationViewModel.swift in Sources */,
 				A5162E2E2B2900D400EB92E1 /* SideMenuOptionModel.swift in Sources */,
+				A5162E3B2B2938D500EB92E1 /* SettingsRowView.swift in Sources */,
+				A5162E352B29352C00EB92E1 /* SettingsView.swift in Sources */,
 				A5CF15492B284A160084C129 /* User.swift in Sources */,
+				A5162E432B29683500EB92E1 /* SavedLocation.swift in Sources */,
 				A53920FD2B22B6E100DF77F7 /* VroomMapView.swift in Sources */,
 				A53921092B23CC2B00DF77F7 /* SearchView.swift in Sources */,
 				A5CF152B2B279ED10084C129 /* Color.swift in Sources */,
