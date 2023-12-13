@@ -14,6 +14,7 @@ struct VroomMapView: UIViewRepresentable {
     let locationManager = LocationManager.shared
     @Binding var mapState: MapViewState
     @EnvironmentObject var locationViewModel : SearchViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     // make the mapView we see in app
     func makeUIView(context: Context) -> some UIView {
@@ -29,6 +30,7 @@ struct VroomMapView: UIViewRepresentable {
         switch mapState {
         case .noInput:
             context.coordinator.clearMapViewReset()
+            context.coordinator.addDriversToMap(homeViewModel.drivers)
             break
         case .searchingForLocation:
             break
@@ -74,6 +76,29 @@ extension VroomMapView {
             polyline.lineWidth = 6
             return polyline
         }
+        
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            if let annotation = annotation as? DriverAnnotation {
+                let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "driver")
+
+                // UIImageView with the SF Symbol
+                let imageView = UIImageView(image: UIImage(systemName: "car.2.fill"))
+                imageView.tintColor = .black
+
+                // UIImageView to UIImage
+                let renderer = UIGraphicsImageRenderer(bounds: imageView.bounds)
+                let image = renderer.image { _ in
+                    imageView.drawHierarchy(in: imageView.bounds, afterScreenUpdates: true)
+                }
+
+                view.image = image
+
+                return view
+            }
+            return nil
+        }
+
+        
         func addAndSelectAnnotation(withCoordinate coordinate: CLLocationCoordinate2D) {
             parent.mapView.removeAnnotations(parent.mapView.annotations)
             let anno = MKPointAnnotation()
@@ -103,6 +128,15 @@ extension VroomMapView {
             if let currentRegion = currentRegion {
                 parent.mapView.setRegion(currentRegion, animated: true)
             }
+        }
+        
+        func addDriversToMap(_ drivers: [User]) {
+            let annotations = drivers.map({DriverAnnotation(driver: $0)})
+            self.parent.mapView.addAnnotations(annotations)
+//            for driver in drivers {
+//                let driverAnno = DriverAnnotation(driver: driver)
+//
+//            }
         }
     }
 }

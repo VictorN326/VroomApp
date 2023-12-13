@@ -8,9 +8,12 @@
 import Foundation
 import Firebase
 import FirebaseFirestoreSwift
+import Combine
 class AuthenticationViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+    private let service = userService.shared
+    private var cancellables = Set<AnyCancellable>()
     init() {
         userSession = Auth.auth().currentUser
         fetchUser()
@@ -30,6 +33,8 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     func registerUser(withEmail email:String, password: String, fullName: String) {
+        guard let location = LocationManager.shared.userLocation else {return}
+//        print("DEBUG: Location is \(location)")
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("DEBUG: Failed to sign up with error \(error.localizedDescription)")
@@ -40,7 +45,7 @@ class AuthenticationViewModel: ObservableObject {
             guard let firebaseUser = result?.user else {return}
             DispatchQueue.main.async {
                 self.userSession = firebaseUser
-                let user = User(fullName: fullName, email: email, uid: firebaseUser.uid, coordinates: GeoPoint(latitude: 37.38, longitude: -122.05), accountType: .driver)
+                let user = User(fullName: fullName, email: email, uid: firebaseUser.uid, coordinates: GeoPoint(latitude: location.latitude, longitude: location.longitude), accountType: .driver)
                 self.currentUser = user
                 guard let encodedUser = try? Firestore.Encoder().encode(user) else {return}
                 
@@ -48,6 +53,9 @@ class AuthenticationViewModel: ObservableObject {
             }
 
         }
+    }
+    func refreshUser() {
+        fetchUser()
     }
     
     func signOut() {
@@ -66,25 +74,12 @@ class AuthenticationViewModel: ObservableObject {
     
     // Get user information from Firebase
     func fetchUser() {
-        guard let uid = self.userSession?.uid else {return}
-        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, error in
-            if let error = error {
-                print("DEBUG: Failed to get Document from Firestore with error \(error.localizedDescription)")
-                return
+        service.$user
+            .sink { user in
+                self.currentUser = user
             }
-            guard let snapshot = snapshot else {return}
-//            print("DEBUG: User data is \(data)")
-            guard let user = try? snapshot.data(as: User.self) else {return}
-            
-            self.currentUser = user
-//            print("DEBUG: Current user is \(user)")
-//            print("DEBUG: User is \(user.fullName)")
-//            print("DEBUG: Email is \(user.email)")
+            .store(in: &cancellables)
         }
     }
     
-    func refreshUser() {
-        fetchUser()
-    }
-    
-}
+

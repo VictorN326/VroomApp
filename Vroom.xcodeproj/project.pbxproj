@@ -18,6 +18,10 @@
 		A5162E412B295C6900EB92E1 /* LocationSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E402B295C6900EB92E1 /* LocationSearchResultsView.swift */; };
 		A5162E432B29683500EB92E1 /* SavedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E422B29683500EB92E1 /* SavedLocation.swift */; };
 		A5162E452B29A28500EB92E1 /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E442B29A28500EB92E1 /* DeveloperPreview.swift */; };
+		A5162E472B29C77900EB92E1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E462B29C77900EB92E1 /* HomeViewModel.swift */; };
+		A5162E492B29CED300EB92E1 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E482B29CED300EB92E1 /* DriverAnnotation.swift */; };
+		A5162E4C2B29DF6000EB92E1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E4B2B29DF6000EB92E1 /* UserService.swift */; };
+		A5162E4E2B29ECB900EB92E1 /* AcceptTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5162E4D2B29ECB900EB92E1 /* AcceptTripView.swift */; };
 		A53920C92B22B48200DF77F7 /* VroomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53920C82B22B48200DF77F7 /* VroomApp.swift */; };
 		A53920CD2B22B48300DF77F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53920CC2B22B48300DF77F7 /* Assets.xcassets */; };
 		A53920D02B22B48300DF77F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53920CF2B22B48300DF77F7 /* Preview Assets.xcassets */; };
@@ -79,6 +83,10 @@
 		A5162E402B295C6900EB92E1 /* LocationSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsView.swift; sourceTree = "<group>"; };
 		A5162E422B29683500EB92E1 /* SavedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocation.swift; sourceTree = "<group>"; };
 		A5162E442B29A28500EB92E1 /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
+		A5162E462B29C77900EB92E1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A5162E482B29CED300EB92E1 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
+		A5162E4B2B29DF6000EB92E1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A5162E4D2B29ECB900EB92E1 /* AcceptTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTripView.swift; sourceTree = "<group>"; };
 		A53920C52B22B48200DF77F7 /* Vroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53920C82B22B48200DF77F7 /* VroomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VroomApp.swift; sourceTree = "<group>"; };
 		A53920CC2B22B48300DF77F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +198,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A5162E4A2B29DF5000EB92E1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A5162E4B2B29DF6000EB92E1 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A53920BC2B22B48100DF77F7 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +229,7 @@
 		A53920C72B22B48200DF77F7 /* Vroom */ = {
 			isa = PBXGroup;
 			children = (
+				A5162E4A2B29DF5000EB92E1 /* Services */,
 				A5CF15342B2816F40084C129 /* ReusableComponents */,
 				A53920F62B22B55400DF77F7 /* App */,
 				A53920F52B22B54F00DF77F7 /* Core */,
@@ -259,6 +276,7 @@
 				A5CF15282B2797270084C129 /* VroomLocation.swift */,
 				A5CF15482B284A160084C129 /* User.swift */,
 				A5162E422B29683500EB92E1 /* SavedLocation.swift */,
+				A5162E482B29CED300EB92E1 /* DriverAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +323,7 @@
 		A53920F72B22B5C400DF77F7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A5162E462B29C77900EB92E1 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -360,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				A5CF15222B25CA370084C129 /* RideRequest.swift */,
+				A5162E4D2B29ECB900EB92E1 /* AcceptTripView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -544,15 +564,19 @@
 				A53920FF2B22B93300DF77F7 /* LocationManager.swift in Sources */,
 				A5162E3F2B2955B000EB92E1 /* SavedLocationSearchView.swift in Sources */,
 				A5162E392B2937B000EB92E1 /* SavedLocationRowView.swift in Sources */,
+				A5162E472B29C77900EB92E1 /* HomeViewModel.swift in Sources */,
 				A5CF15272B278F610084C129 /* CurrencyConverter.swift in Sources */,
 				A5CF15472B282D3F0084C129 /* AuthenticationViewModel.swift in Sources */,
+				A5162E4C2B29DF6000EB92E1 /* UserService.swift in Sources */,
 				A53920C92B22B48200DF77F7 /* VroomApp.swift in Sources */,
 				A539210B2B23D0EA00DF77F7 /* SearchResultCells.swift in Sources */,
 				A5162E452B29A28500EB92E1 /* DeveloperPreview.swift in Sources */,
 				A5CF15232B25CA370084C129 /* RideRequest.swift in Sources */,
+				A5162E4E2B29ECB900EB92E1 /* AcceptTripView.swift in Sources */,
 				A5CF15332B27D9620084C129 /* RegistrationView.swift in Sources */,
 				A5CF15202B25630C0084C129 /* MapViewState.swift in Sources */,
 				A5162E412B295C6900EB92E1 /* LocationSearchResultsView.swift in Sources */,
+				A5162E492B29CED300EB92E1 /* DriverAnnotation.swift in Sources */,
 				A5162E3D2B29410900EB92E1 /* SavedLocationViewModel.swift in Sources */,
 				A5162E2E2B2900D400EB92E1 /* SideMenuOptionModel.swift in Sources */,
 				A5162E3B2B2938D500EB92E1 /* SettingsRowView.swift in Sources */,

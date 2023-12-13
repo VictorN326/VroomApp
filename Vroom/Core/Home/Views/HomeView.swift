@@ -12,6 +12,8 @@ struct HomeView: View {
     @State private var showSideMenu = false
     @EnvironmentObject var locationViewModel: SearchViewModel
     @EnvironmentObject var authViewModel: AuthenticationViewModel
+    @EnvironmentObject var homeViewModel : HomeViewModel
+    
     var body: some View {
         Group {
             if authViewModel.userSession == nil {

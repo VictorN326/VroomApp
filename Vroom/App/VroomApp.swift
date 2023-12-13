@@ -20,6 +20,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct VroomApp: App {
     @StateObject var locationViewModel = SearchViewModel()
     @StateObject var authViewModel = AuthenticationViewModel()
+    @StateObject var homeViewModel = HomeViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
@@ -27,6 +28,7 @@ struct VroomApp: App {
             // allows us to have one instance that can be shared across entire app
                 .environmentObject(locationViewModel)
                 .environmentObject(authViewModel)
+                .environmentObject(homeViewModel)
         }
     }
 }

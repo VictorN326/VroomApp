@@ -12,7 +12,6 @@ struct SettingsView: View {
     @EnvironmentObject var viewModel: AuthenticationViewModel
     init(user: User) {
         self.user = user
-        print("DEBUG: \(String(describing: user.workLocation))")
     }
     var body: some View {
         VStack {
