@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationSearchResults: View {
-    @StateObject var viewModel: SearchViewModel
+    @StateObject var viewModel: HomeViewModel
     let config: LocationResultsViewConfiguration
     @Environment(\.dismiss) private var dismiss
     var body: some View {

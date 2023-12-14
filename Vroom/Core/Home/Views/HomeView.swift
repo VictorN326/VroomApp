@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var mapState = MapViewState.noInput
     @State private var showSideMenu = false
-    @EnvironmentObject var locationViewModel: SearchViewModel
+//    @EnvironmentObject var locationViewModel: SearchViewModel
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     @EnvironmentObject var homeViewModel : HomeViewModel
     
@@ -60,8 +60,8 @@ extension HomeView {
                     .padding(.leading)
                     .padding(.top, 4)
             }
-            if mapState == .locationSelected || mapState == .polylineAdded {
-                RideRequest()
+            if let user = authViewModel.currentUser{
+                homeViewModel.viewForState(mapState, user: user)
                     .transition(.move(edge: .bottom))
             }
         }
@@ -69,14 +69,37 @@ extension HomeView {
             .onReceive(LocationManager.shared.$userLocation, perform: { location in
             if let location = location {
 //                print("DEBUG: User location in home view is \(location)")
-                locationViewModel.userLocation = location
+                homeViewModel.userLocation = location
             }
         })
-            .onReceive(locationViewModel.$selectedVroomLocation, perform: {location in
+            .onReceive(homeViewModel.$selectedVroomLocation, perform: {location in
                 if location != nil {
                     self.mapState = .locationSelected
                 }
             })
+            .onReceive(homeViewModel.$trip) { trip in
+                guard let trip = trip else {
+                    self.mapState = .noInput
+                    return
+                }
+                
+                withAnimation(.spring()) {
+                    switch trip.state {
+                    case .requested:
+                        self.mapState = .tripRequested
+                    case .rejected:
+                        self.mapState = .tripRejected
+                    case .accepted:
+                        self.mapState = .tripAccepted
+                    case .passengetCancelled:
+                        self.mapState = .tripCancelledByPassenger
+                        print("DEBUG: Passenger cancelled Trip")
+                    case .driverCancelled:
+                        self.mapState = .tripCancelledByDriver
+                        print("DEBUG: Driver cancelled trip")
+                    }
+                }
+            }
     }
 }
 #Preview {

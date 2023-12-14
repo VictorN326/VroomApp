@@ -18,7 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct VroomApp: App {
-    @StateObject var locationViewModel = SearchViewModel()
+//    @StateObject var locationViewModel = SearchViewModel()
     @StateObject var authViewModel = AuthenticationViewModel()
     @StateObject var homeViewModel = HomeViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -26,7 +26,7 @@ struct VroomApp: App {
         WindowGroup {
             HomeView()
             // allows us to have one instance that can be shared across entire app
-                .environmentObject(locationViewModel)
+//                .environmentObject(locationViewModel)
                 .environmentObject(authViewModel)
                 .environmentObject(homeViewModel)
         }

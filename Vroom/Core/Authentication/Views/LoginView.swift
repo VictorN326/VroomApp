@@ -19,7 +19,7 @@ struct LoginView: View {
                 VStack {
                     VStack(spacing: -15) {
                         // Image Logo and Title
-                        Image("vroom").resizable().frame(width: 350, height: 350)
+                        Image("vroom").resizable().frame(width: 400, height: 400)
                         //Input Fields
                         VStack(spacing: 30) {
                             //Email Input Field

@@ -9,12 +9,18 @@ import SwiftUI
 import MapKit
 struct AcceptTripView: View {
     @State private var region: MKCoordinateRegion
-    
-    init() {
-        let center = CLLocationCoordinate2D(latitude: 37.3346, longitude: -122.0090)
+    @EnvironmentObject var viewModel: HomeViewModel
+    let trip: Trip
+    let annotationItem: VroomLocation
+    init(trip: Trip) {
+        let center = CLLocationCoordinate2D(latitude: trip.pickupLocation.latitude, longitude: trip.pickupLocation.longitude)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.025)
         self.region = MKCoordinateRegion(center: center, span: span)
+        
+        self.trip = trip
+        
+        self.annotationItem = VroomLocation(title: trip.pickupLocationName, coordinate: trip.pickupLocation.toCoordinate())
     }
     var body: some View {
 
@@ -26,7 +32,7 @@ struct AcceptTripView: View {
             //pickup option
             VStack {
                 HStack {
-                    Text("Would you like to pickup this passenger")
+                    Text("Would you like to pickup this passenger?")
                         .font(.headline)
                         .fontWeight(.semibold)
                         .lineLimit(2)
@@ -36,7 +42,7 @@ struct AcceptTripView: View {
                     Spacer()
                     
                     VStack {
-                        Text("10").bold()
+                        Text("\(trip.travelTimeToPassenger)").bold()
                         
                         Text("min").bold()
                     }
@@ -60,7 +66,7 @@ struct AcceptTripView: View {
                         .clipShape(Circle())
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("VICTOR")
+                        Text(trip.passengerName)
                             .fontWeight(.bold)
                         HStack {
                             Image(systemName: "star.fill").foregroundColor(Color(.systemYellow))
@@ -75,7 +81,7 @@ struct AcceptTripView: View {
                     
                     VStack(spacing: 6) {
                         Text("Earnings")
-                        Text("$22.04").font(.system(size: 24, weight: .semibold))
+                        Text(trip.tripCost.toCurrency()).font(.system(size: 24, weight: .semibold))
                     }
                    
                 }
@@ -89,17 +95,17 @@ struct AcceptTripView: View {
                 HStack {
                     // address info
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Apple Campus")
+                        Text(trip.pickupLocationName)
                             .font(.headline)
                         
-                        Text("Infinite Loop 1, Santa Clara County")
+                        Text(trip.pickupLocationAddress)
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
                     
                     Spacer()
                     VStack {
-                        Text("5.2")
+                        Text(trip.distanceToPassenger.distanceInMiles())
                             .font(.headline)
                             .fontWeight(.semibold)
                         Text("mi")
@@ -110,11 +116,14 @@ struct AcceptTripView: View {
                 }
                 .padding(.horizontal)
                 // map image
-                var cameraPosition: MapCameraPosition {
-                    MapCameraPosition.region(region)
+//                var cameraPosition: MapCameraPosition {
+//                    MapCameraPosition.region(region)
+//                }
+//                Map(position: .constant(cameraPosition), bounds: nil, interactionModes: .all, scope: nil))
+                Map(coordinateRegion: $region, annotationItems: [annotationItem]) {item in
+                    MapMarker(coordinate: item.coordinate)
+                    
                 }
-                Map(position: .constant(cameraPosition), bounds: nil, interactionModes: .all, scope: nil)
-//                Map(coordinateRegion: $region)
                     .frame(height: 220)
                     .cornerRadius(10)
                     .shadow(color: .black.opacity(0.6), radius: 10)
@@ -125,7 +134,9 @@ struct AcceptTripView: View {
             //action button
             
             HStack {
-                Button(action: {}, label: {
+                Button(action: {
+                    viewModel.rejectTrip()
+                }, label: {
                     Text("Reject")
                         .font(.headline)
                         .fontWeight(.bold)
@@ -136,7 +147,9 @@ struct AcceptTripView: View {
                         .foregroundColor(.white)
                 })
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    viewModel.acceptTrip()
+                }, label: {
                     Text("Accept")
                         .font(.headline)
                         .fontWeight(.bold)
@@ -149,10 +162,18 @@ struct AcceptTripView: View {
             }
             .padding(.top)
             .padding(.horizontal)
+            .padding(.bottom, 24)
         }
+        .background(Color.theme.backgroundColor)
+        .cornerRadius(16)
+        .shadow(color: Color.theme.secondaryBackgroundColor,radius: 20)
     }
 }
 
-#Preview {
-    AcceptTripView()
+//use old way to prevent bugs with preview and use dummy data
+struct AcceptTripView_Preview: PreviewProvider{
+    static var previews: some View {
+        AcceptTripView(trip: dev.mockTrip)
+    }
 }
+    

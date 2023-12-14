@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var startLocationText = ""
-    @EnvironmentObject var viewModel : SearchViewModel
+    @EnvironmentObject var viewModel : HomeViewModel
     
     
     var body: some View {

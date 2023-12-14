@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RideRequest: View {
     @State private var selectedRideType : RideType = .VroomX
-    @EnvironmentObject var locationViewModel : SearchViewModel
+    @EnvironmentObject var homeViewModel : HomeViewModel
     var body: some View {
         VStack {
             Capsule().foregroundColor(Color(.systemGray5))
@@ -30,16 +30,16 @@ struct RideRequest: View {
                     HStack {
                         Text("Current Location").font(.system(size: 16, weight: .semibold)).foregroundColor(.gray)
                         Spacer()
-                        Text(locationViewModel.pickupTime ?? "").font(.system(size: 14, weight: .semibold)).foregroundColor(.gray)
+                        Text(homeViewModel.pickupTime ?? "").font(.system(size: 14, weight: .semibold)).foregroundColor(.gray)
                     }
                     .padding(.bottom, 10)
                     
                     HStack {
-                        if let location = locationViewModel.selectedVroomLocation {
+                        if let location = homeViewModel.selectedVroomLocation {
                             Text(location.title).font(.system(size: 16, weight: .semibold))
                         }
                         Spacer()
-                        Text(locationViewModel.dropOffTime ?? "").font(.system(size: 14, weight: .semibold)).foregroundColor(.gray)
+                        Text(homeViewModel.dropOffTime ?? "").font(.system(size: 14, weight: .semibold)).foregroundColor(.gray)
                     }
                 }
                 .padding(.leading, 8)
@@ -85,7 +85,7 @@ struct RideRequest: View {
                             }
                             VStack(alignment: .leading, spacing: type == .VroomXL ? 2 : 4) {
                                 Text(type.description).font(.system(size: 14, weight: .semibold))
-                                Text(locationViewModel.computeRidePrice(forType: type).toCurrency()).font(.system(size: 14, weight: .semibold))
+                                Text(homeViewModel.computeRidePrice(forType: type).toCurrency()).font(.system(size: 14, weight: .semibold))
                             }.padding(.horizontal)
                             
             
@@ -121,7 +121,7 @@ struct RideRequest: View {
             
         // Requesting Ride Button
             Button{
-                
+                homeViewModel.requestTrip()
             } label: {
                 Text("CONFIRM RIDE")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).frame(width: UIScreen.main.bounds.width - 32, height: 50).background(.blue).cornerRadius(10).foregroundColor(.white)

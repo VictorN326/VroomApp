@@ -7,7 +7,8 @@
 
 import Foundation
 import CoreLocation
-struct VroomLocation {
+struct VroomLocation: Identifiable {
+    let id = NSUUID().uuidString
     let title : String
     let coordinate: CLLocationCoordinate2D
 }

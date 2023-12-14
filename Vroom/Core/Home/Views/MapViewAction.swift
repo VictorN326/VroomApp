@@ -10,7 +10,7 @@ import SwiftUI
 struct MapViewAction: View {
     @Binding var mapState: MapViewState
     @Binding var showSideMenu: Bool
-    @EnvironmentObject var viewModel: SearchViewModel
+    @EnvironmentObject var viewModel: HomeViewModel
     @EnvironmentObject var authViewModel: AuthenticationViewModel
     
     var body: some View {
@@ -38,8 +38,8 @@ struct MapViewAction: View {
         case .searchingForLocation:
             mapState = .noInput
             
-        case .locationSelected, .polylineAdded:
-//            print("DEBUG: Clear map view...")
+        case .locationSelected, .polylineAdded, .tripRejected, .tripAccepted, .tripRequested, .tripCancelledByDriver, .tripCancelledByPassenger:
+            //            print("DEBUG: Clear map view...")
             mapState = .noInput
             viewModel.selectedVroomLocation = nil
         }
@@ -50,7 +50,8 @@ struct MapViewAction: View {
         case .noInput:
             return "line.3.horizontal"
             
-        case .searchingForLocation, .locationSelected, .polylineAdded:
+        case .searchingForLocation, .locationSelected, .polylineAdded,
+                .tripAccepted, .tripRejected, .tripRequested, .tripCancelledByDriver, .tripCancelledByPassenger:
             return "arrow.left"
         default:
             return "line.3.horizontal"

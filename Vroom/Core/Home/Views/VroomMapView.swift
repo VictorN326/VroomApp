@@ -13,7 +13,7 @@ struct VroomMapView: UIViewRepresentable {
     let mapView = MKMapView()
     let locationManager = LocationManager.shared
     @Binding var mapState: MapViewState
-    @EnvironmentObject var locationViewModel : SearchViewModel
+//    @EnvironmentObject var locationViewModel : SearchViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
     
     // make the mapView we see in app
@@ -35,7 +35,7 @@ struct VroomMapView: UIViewRepresentable {
         case .searchingForLocation:
             break
         case .locationSelected:
-            if let coordinate = locationViewModel.selectedVroomLocation?.coordinate {
+            if let coordinate = homeViewModel.selectedVroomLocation?.coordinate {
 //                print("DEBUG: Coordinate is \(coordinate)")
 //                print("DEBUG: Adding stuff to the map...")
                 context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
@@ -43,6 +43,15 @@ struct VroomMapView: UIViewRepresentable {
             }
             break
         case .polylineAdded:
+            break
+        
+        case .tripAccepted:
+            guard let trip = homeViewModel.trip else {return}
+            guard let driver = homeViewModel.currentUser, driver.accountType == .driver else {return}
+            guard let route = homeViewModel.routeToPickupLocation else {return}
+            context.coordinator.configurePolylinetoPickupLocation(withRoute: route)
+            context.coordinator.addAndSelectAnnotation(withCoordinate: trip.pickupLocation.toCoordinate() )
+        default:
             break
         }
     }
@@ -97,6 +106,12 @@ extension VroomMapView {
             }
             return nil
         }
+        
+        func configurePolylinetoPickupLocation(withRoute route: MKRoute) {
+            self.parent.mapView.addOverlay(route.polyline)
+            let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: .init(top: 88, left: 32, bottom: 400, right: 32))
+            self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
+        }
 
         
         func addAndSelectAnnotation(withCoordinate coordinate: CLLocationCoordinate2D) {
@@ -111,7 +126,7 @@ extension VroomMapView {
             guard let userLocationCoordinate = self.userLocationCoordinate else {return}
 //            self.parent.mapView.removeOverlays(self.parent.mapView.overlays)
 //            print("DEBUG: Previous overlay should be removed")
-            parent.locationViewModel.getDestinationRoute(from: userLocationCoordinate, to: coordinate) { route in
+            parent.homeViewModel.getDestinationRoute(from: userLocationCoordinate, to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
                 self.parent.mapState = .polylineAdded
                 let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32))
